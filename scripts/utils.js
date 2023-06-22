@@ -13,7 +13,6 @@
 /**
  * The decision engine for where to get Milo's libs from.
  */
-/*
 export const [setLibs, getLibs] = (() => {
   let libs;
   return [
@@ -29,7 +28,6 @@ export const [setLibs, getLibs] = (() => {
     }, () => libs,
   ];
 })();
-*/
 
 /*
  * ------------------------------------------------------------
@@ -43,6 +41,7 @@ export async function useMiloSample() {
   const { createTag } = await import(`${getLibs()}/utils/utils.js`);
 }
 
+/*
 export function initSidekick() {
   const initPlugins = async () => {
     const { default: init } = await import('./sidekick.js');
@@ -56,3 +55,4 @@ export function initSidekick() {
     });
   }
 }
+*/
