@@ -1,0 +1,27 @@
+.tictactoe > div {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  width: 300px;
+  height: 300px;
+  margin: auto;
+}
+
+.tictactoe > div > div {
+  border: solid 1px #ccc;
+  text-align: center;
+  font-size: 100px;
+  padding: 18px;
+  color: #eee;
+  cursor: pointer;
+}
+.tictactoe > div > div.x,
+.tictactoe > div > div.o  {
+cursor: default;
+}
+
+.tictactoe > div > div.o {
+color: green
+}
+.tictactoe > div > div.x {
+color: red
+}
