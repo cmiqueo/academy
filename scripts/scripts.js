@@ -64,5 +64,5 @@ const miloLibs = setLibs(LIBS);
   setConfig({ ...CONFIG, miloLibs });
   await loadArea();
 
-  initSidekick();
+  // initSidekick();
 }());
