@@ -25,3 +25,14 @@ color: green
 .tictactoe > div > div.x {
 color: red
 }
+
+h1#milo-block-tic-tac-toe-game {
+  font-size: 18px;
+  text-align: center;
+}
+
+h1#milo-block-tic-tac-toe-game em {
+  font-weight: 600;
+  font-style: normal;
+  color: gray;
+}

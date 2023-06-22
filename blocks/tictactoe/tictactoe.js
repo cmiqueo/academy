@@ -45,9 +45,7 @@ export default async function init(el) {
   }
 
   function endGame() {
-    if (player = "x" ){
-      alert(`player "${player.toUpperCase()}" wins!`);
-    }
+    alert(`player "${player.toUpperCase()}" wins!`);
   }
 
 }
