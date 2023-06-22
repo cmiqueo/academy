@@ -1,3 +1,3 @@
 export default function init() {
-  console.log("Sidekick loaded!")
+  console.log("[INFO] Sidekick loaded!")
 }
