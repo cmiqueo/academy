@@ -1,0 +1,14 @@
+.tictactoe > div {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    width: 300px;
+    height: 300px;
+    margin: auto;
+}
+
+.tictactoe > div > div {
+    border: solid 1px #ccc;
+    text-align: center;
+    font-size: 100px;
+    padding: 18px;
+}
