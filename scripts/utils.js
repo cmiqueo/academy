@@ -40,3 +40,20 @@ export const [setLibs, getLibs] = (() => {
 export async function useMiloSample() {
   const { createTag } = await import(`${getLibs()}/utils/utils.js`);
 }
+
+/**
+ * [Carlos] Sidekick plugin to add a new functionality to the sidekick
+ */
+export function initSidekick() {
+  const initPlugins = async () => {
+    const { default: init } = await import('./sidekick.js');
+    init();
+  };
+  if (document.querySelector('helix-sidekick')) {
+    initPlugins();
+  } else {
+    document.addEventListener('sidekick-ready', () => {
+      initPlugins();
+    });
+  }
+}
