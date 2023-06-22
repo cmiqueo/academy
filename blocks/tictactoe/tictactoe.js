@@ -15,9 +15,13 @@ export default async function init(el) {
     o: [],
     x:[]
   }
-  const board = document.querySelector('.tictactoe > div')
+  const board = document.querySelector('.tictactoe > div');
   const cells = board.querySelectorAll('.tictactoe > div > div');
-  cells.forEach (cell => cell.addEventListener("click", updateGame))
+  let count = 1;
+  cells.forEach (cell => {
+    cell.setAttribute("data-cell", count++);
+    cell.addEventListener("click", updateGame)}
+  )
 
   function updateGame() {
     // console.log("updateGame() Loaded!")
