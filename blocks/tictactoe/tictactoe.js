@@ -1,1 +1,3 @@
-console.log('TicTacToe loaded!!!')
+export default async function init(el) {
+  console.log('TicTacToe loaded!!!')
+}
