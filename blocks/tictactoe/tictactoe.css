@@ -10,43 +10,47 @@ h1#milo-block-tic-tac-toe-game em {
 }
 
 .tictactoe > div:first-child {
-      display: grid;
-      grid-template-columns: 1fr 1fr 1fr;
-      width: 360px;
-      height: auto;
-      margin: auto;
-      box-shadow: 0 0 25px 0;
-      border-radius: 10px;
-  }
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  width: 360px;
+  height: auto;
+  margin: auto;
+  box-shadow: 0 0 25px 0;
+  border-radius: 10px;
+ }
 
-  .tictactoe > div:first-child > div {
-    border: solid 1px #ccc;
+.tictactoe > div:first-child > div {
+  border: solid 1px #ccc;
+  text-align: center;
+  font-size: 140px;
+  padding: 18px;
+  color: #eee;
+  cursor: pointer;
+  height: 90px;
+  line-height: 62px;
+  font-weight: 800;
+}
+.tictactoe > div > div.x,
+.tictactoe > div > div.o  {
+  cursor: default;
+}
+
+.tictactoe > div > div.o {
+  color: green
+}
+.tictactoe > div > div.x {
+  color: red
+}
+.tictactoe > div.output > div {
+    font-size: 38px;
+    color: #000;
+    height: auto;
+    width: 360px;
     text-align: center;
-    font-size: 140px;
-    padding: 18px;
-    color: #eee;
-    cursor: pointer;
-    height: 90px;
-    line-height: 62px;
-    font-weight: 800;
-  }
-  .tictactoe > div > div.x,
-  .tictactoe > div > div.o  {
-    cursor: default;
-  }
+    margin: 20px auto;
+    border: none
+}
 
-  .tictactoe > div > div.o {
-    color: green
-  }
-  .tictactoe > div > div.x {
-    color: red
-  }
-  .tictactoe > div.output > div {
-      font-size: 38px;
-      color: #000;
-      height: auto;
-      width: 360px;
-      text-align: center;
-      margin: 20px auto;
-      border: none
-  }
+.highlite {
+  box-shadow: inset 0 0 10px 1px;
+}
