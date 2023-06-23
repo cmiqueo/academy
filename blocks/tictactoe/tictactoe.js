@@ -15,21 +15,27 @@ export default async function init(el) {
     o: [],
     x:[]
   }
-  const board = document.querySelector('.tictactoe > div');
-  const cells = board.querySelectorAll('.tictactoe > div > div');
+  const game = document.querySelector('.tictactoe');
+  const board = document.querySelector('.tictactoe > div:first-child');
+  const cells = game.querySelectorAll('.tictactoe > div:first-child > div');
+
+  const output = game.querySelector('.tictactoe > div:nth-child(2)');
+  output.classList.add("output");
+  output.querySelector("div").innerHTML = "Welcome!";
+
   let count = 1;
   cells.forEach (cell => {
     cell.setAttribute("data-cell", count++);
-    cell.addEventListener("click", updateGame)}
-  )
+    cell.addEventListener("click", updateGame)
+  });
 
   function updateGame() {
+    output.querySelector("div").innerHTML = ''; 
     const cellNum = event.target.dataset.cell;
     const cell = board.querySelector(`[data-cell="${cellNum}"]`)
     cell.innerHTML = player;
     cell.classList.add(player)
     cell.removeEventListener("click", updateGame)
-    console.log(typeof cellNum)
     players[player].push(Number(cellNum));
 
     if (players[player].length > 2 ) {
@@ -46,6 +52,6 @@ export default async function init(el) {
     cells.forEach (cell => {
       cell.removeEventListener("click", updateGame)}
     )
-    alert(`Player "${player.toUpperCase()}" wins!`);
+    output.querySelector("div").innerHTML = `Player "${player.toUpperCase()}" wins!`;
   }
 }
