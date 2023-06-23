@@ -13,11 +13,11 @@ h1#milo-block-tic-tac-toe-game em {
       display: grid;
       grid-template-columns: 1fr 1fr 1fr;
       width: 360px;
-      height: 360px;
+      height: auto;
       margin: auto;
   }
 
-  .tictactoe > div > div {
+  .tictactoe > div:first-child > div {
     border: solid 1px #ccc;
     text-align: center;
     font-size: 140px;
@@ -25,7 +25,8 @@ h1#milo-block-tic-tac-toe-game em {
     color: #eee;
     cursor: pointer;
     height: 90px;
-    line-height: 70px;
+    line-height: 62px;
+    font-weight: 800;
   }
   .tictactoe > div > div.x,
   .tictactoe > div > div.o  {
