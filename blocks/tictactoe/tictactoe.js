@@ -44,7 +44,7 @@ export default async function init(el) {
     if (players[player].length > 2 ) {
       WINNING_COMBINATIONS.forEach( (combination) => {
         if (combination.every(elem => players[player].indexOf(elem) > -1) ) {
-          endGame();
+          endGame(combination);
         } else if (move === 9) {
           gameDraw()
         }
@@ -53,10 +53,13 @@ export default async function init(el) {
     player = (player === "x") ? "o" : "x";
   }
 
-  function endGame() {
+ function endGame(combination) {
     cells.forEach (cell => {
-      cell.removeEventListener("click", updateGame)}
-    )
+      cell.removeEventListener("click", updateGame);
+      if (combination?.includes(Number(cell.dataset.cell))) {
+        cell.classList.add("highlite");
+      }
+    })
     output.querySelector("div").innerHTML = `(((Player "${player.toUpperCase()}" Wins)))`;
   }
 
