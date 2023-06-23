@@ -60,17 +60,22 @@ export default async function init(el) {
         cell.classList.add("highlite");
       }
     })
-    // output.querySelector("div").innerHTML = `(((Player "${player.toUpperCase()}" Wins)))`;
-    output.querySelector("div").innerHTML = "Play Again!";
 
     output.classList.add("ended"); // v3
-
+    // output.querySelector("div").innerHTML = `(((Player "${player.toUpperCase()}" Wins)))`;
+    output.querySelector("div").innerHTML = "Play Again!";
+    output.querySelector("div").addEventListener("click", resetGame)
   }
 
   function gameDraw() {
     cells.forEach (cell => {
       cell.removeEventListener("click", updateGame)}
     )
-    output.querySelector("div").innerHTML = 'Nobody wins';
+    output.querySelector("div").innerHTML = "Nobody wins. Play Again!";
+    output.querySelector("div").addEventListener("click", resetGame)
+  }
+
+  function resetGame() {
+    window.location.reload(); // quick hack for now
   }
 }
