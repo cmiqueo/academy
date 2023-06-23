@@ -10,11 +10,13 @@ export default async function init(el) {
     [3, 5, 7]
   ]
 
+  let move = 0;
   let player = "o"; // The user starts
   const players = {
     o: [],
     x:[]
   }
+
   const game = document.querySelector('.tictactoe');
   const board = document.querySelector('.tictactoe > div:first-child');
   const cells = game.querySelectorAll('.tictactoe > div:first-child > div');
@@ -30,6 +32,7 @@ export default async function init(el) {
   });
 
   function updateGame() {
+    move++;
     output.querySelector("div").innerHTML = ''; 
     const cellNum = event.target.dataset.cell;
     const cell = board.querySelector(`[data-cell="${cellNum}"]`)
@@ -42,6 +45,8 @@ export default async function init(el) {
       WINNING_COMBINATIONS.forEach( (combination) => {
         if (combination.every(elem => players[player].indexOf(elem) > -1) ) {
           endGame();
+        } else if (move === 9) {
+          gameDraw()
         }
       });
     }
@@ -52,6 +57,13 @@ export default async function init(el) {
     cells.forEach (cell => {
       cell.removeEventListener("click", updateGame)}
     )
-    output.querySelector("div").innerHTML = `Player "${player.toUpperCase()}" wins!`;
+    output.querySelector("div").innerHTML = `(((Player "${player.toUpperCase()}" Wins)))`;
+  }
+
+  function gameDraw() {
+    cells.forEach (cell => {
+      cell.removeEventListener("click", updateGame)}
+    )
+    output.querySelector("div").innerHTML = 'Nobody wins';
   }
 }
