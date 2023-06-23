@@ -24,7 +24,6 @@ export default async function init(el) {
   )
 
   function updateGame() {
-    // console.log("updateGame() Loaded!")
     const cellNum = event.target.dataset.cell;
     const cell = board.querySelector(`[data-cell="${cellNum}"]`)
     cell.innerHTML = player;
@@ -36,7 +35,6 @@ export default async function init(el) {
     if (players[player].length > 2 ) {
       WINNING_COMBINATIONS.forEach( (combination) => {
         if (combination.every(elem => players[player].indexOf(elem) > -1) ) {
-          console.log("******* W I N N E R ******")
           endGame();
         }
       });
@@ -45,7 +43,9 @@ export default async function init(el) {
   }
 
   function endGame() {
+    cells.forEach (cell => {
+      cell.removeEventListener("click", updateGame)}
+    )
     alert(`Player "${player.toUpperCase()}" wins!`);
   }
-
 }
