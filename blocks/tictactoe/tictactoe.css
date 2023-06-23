@@ -44,5 +44,6 @@ h1#milo-block-tic-tac-toe-game em {
       height: auto;
       width: 360px;
       text-align: center;
-       margin: 20px auto;
+      margin: 20px auto;
+      border: none
   }
