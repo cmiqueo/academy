@@ -42,19 +42,19 @@ export default async function init(el) {
     players[player].push(Number(cellNum));
 
     if (players[player].length > 2 ) {
-      WINNING_COMBINATIONS.forEach( (combination) => {
+      for (let combination of WINNING_COMBINATIONS) {
         if (combination.every(elem => players[player].indexOf(elem) > -1) ) {
           endGame(combination);
-          return;
+          break;
         } else if (move === 9) {
           gameDraw()
         }
-      });
+      }
     } 
     player = (player === "x") ? "o" : "x";
   }
 
- function endGame(combination) {
+  function endGame(combination) {
     cells.forEach (cell => {
       cell.removeEventListener("click", updateGame);
       if (combination?.includes(Number(cell.dataset.cell))) {
