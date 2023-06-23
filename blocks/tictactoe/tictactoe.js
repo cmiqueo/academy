@@ -45,6 +45,7 @@ export default async function init(el) {
       WINNING_COMBINATIONS.forEach( (combination) => {
         if (combination.every(elem => players[player].indexOf(elem) > -1) ) {
           endGame(combination);
+          return;
         } else if (move === 9) {
           gameDraw()
         }
@@ -71,6 +72,7 @@ export default async function init(el) {
     cells.forEach (cell => {
       cell.removeEventListener("click", updateGame)}
     )
+    output.classList.add("ended"); // v3
     output.querySelector("div").innerHTML = "Nobody wins. Play Again!";
     output.querySelector("div").addEventListener("click", resetGame)
   }
