@@ -18,12 +18,14 @@ h1#milo-block-tic-tac-toe-game em {
   }
 
   .tictactoe > div > div {
-      border: solid 1px #ccc;
-      text-align: center;
-      font-size: 100px;
-      padding: 18px;
-      color: #eee;
-      cursor: pointer;
+    border: solid 1px #ccc;
+    text-align: center;
+    font-size: 140px;
+    padding: 18px;
+    color: #eee;
+    cursor: pointer;
+    height: 90px;
+    line-height: 70px;
   }
   .tictactoe > div > div.x,
   .tictactoe > div > div.o  {
