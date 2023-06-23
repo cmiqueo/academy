@@ -49,7 +49,7 @@ export default async function init(el) {
           gameDraw()
         }
       });
-    }
+    } 
     player = (player === "x") ? "o" : "x";
   }
 
@@ -60,7 +60,11 @@ export default async function init(el) {
         cell.classList.add("highlite");
       }
     })
-    output.querySelector("div").innerHTML = `(((Player "${player.toUpperCase()}" Wins)))`;
+    // output.querySelector("div").innerHTML = `(((Player "${player.toUpperCase()}" Wins)))`;
+    output.querySelector("div").innerHTML = "Play Again!";
+
+    output.classList.add("ended"); // v3
+
   }
 
   function gameDraw() {
