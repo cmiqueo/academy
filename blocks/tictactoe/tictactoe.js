@@ -12,10 +12,7 @@ export default async function init(el) {
 
   let move = 0;
   let player = "o"; // The user starts
-  const players = {
-    o: [],
-    x:[]
-  }
+  const players = {o:[], x:[]}
 
   const game = document.querySelector('.tictactoe');
   const board = document.querySelector('.tictactoe > div:first-child');
@@ -62,7 +59,7 @@ export default async function init(el) {
       }
     })
 
-    output.classList.add("ended"); // v3
+    output.classList.add("ended");
     // output.querySelector("div").innerHTML = `(((Player "${player.toUpperCase()}" Wins)))`;
     output.querySelector("div").innerHTML = "Play Again!";
     output.querySelector("div").addEventListener("click", resetGame)
@@ -72,12 +69,23 @@ export default async function init(el) {
     cells.forEach (cell => {
       cell.removeEventListener("click", updateGame)}
     )
-    output.classList.add("ended"); // v3
+    output.classList.add("ended");
     output.querySelector("div").innerHTML = "Nobody wins. Play Again!";
     output.querySelector("div").addEventListener("click", resetGame)
   }
 
   function resetGame() {
-    window.location.reload(); // quick hack for now
+    players["o"] = [];
+    players["x"] = [];
+    player = "o";
+    move = 0;
+    cells.forEach (cell => {
+      cell.addEventListener("click", updateGame)
+      cell.innerHTML = "";
+      cell.classList = "";
+    });
+    output.classList.remove("ended")
+    updateGame() 
   }
+
 }
