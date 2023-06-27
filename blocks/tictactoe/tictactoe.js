@@ -78,7 +78,7 @@ export default async function init(el) {
     players["o"] = [];
     players["x"] = [];
     player = "o";
-    move = 0;
+    move = -1;
     cells.forEach (cell => {
       cell.addEventListener("click", updateGame)
       cell.innerHTML = "";
